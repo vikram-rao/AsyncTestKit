@@ -5,7 +5,7 @@ XCTest framework tests have no api to wait for asynchronous calls to complete an
 
 Using AsyncTestKit, perform asynchronous calls in tests without terminating the tests and performing asserts in the asynchronous callbacks. Finally send a signal to end the wait. The wait for async call takes a timeout in seconds so the wait is not indefinite and test fails on timeout.
 
-Example:
+Example:(Check the tests in the source for more examples)
 
 ```
 //Import AsyncTestKit
