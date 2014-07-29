@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <XCTest/XCTest.h>
 
-@interface AsynTestCase : XCTestCase
+@interface AsyncTestCase : XCTestCase
 
 -(void)wait:(int)timeOut;
 -(void)done;

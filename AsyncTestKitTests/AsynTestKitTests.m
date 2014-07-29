@@ -7,9 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "AsynTestCase.h"
+#import "AsyncTestCase.h"
 
-@interface AsynTestKitTests : AsynTestCase
+@interface AsynTestKitTests : AsyncTestCase
 
 @end
 

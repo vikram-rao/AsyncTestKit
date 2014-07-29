@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Vikram Rao. All rights reserved.
 //
 
-#import "AsynTestCase.h"
+#import "AsyncTestCase.h"
 #import <XCTest/XCTest.h>
 
-@interface AsynTestCase ()
+@interface AsyncTestCase ()
 
 @property (nonatomic) BOOL completed;
 
 @end
 
-@implementation AsynTestCase
+@implementation AsyncTestCase
 
 -(void)wait:(int)timeOut
 {
