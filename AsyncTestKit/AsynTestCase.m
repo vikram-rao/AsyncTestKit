@@ -19,16 +19,15 @@
 
 -(void)wait:(int)timeOut
 {
-    int pollCount = 0;
+    int elapsedTime = 0;
     
-    while (self.completed == NO && pollCount <= 4) {
-        NSLog(@"polling... %i", pollCount);
+    while (self.completed == NO && elapsedTime <= 4) {
         NSDate* untilDate = [NSDate dateWithTimeIntervalSinceNow:1.0];
         [[NSRunLoop currentRunLoop] runUntilDate:untilDate];
-        pollCount++;
+        elapsedTime++;
     }
     
-    if (pollCount == timeOut) {
+    if (elapsedTime == timeOut) {
         XCTFail(@"Timeout");
     }
 }

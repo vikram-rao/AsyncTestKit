@@ -12,10 +12,8 @@
 		ACD23989198656B30070AAB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD23979198656B20070AAB4 /* Foundation.framework */; };
 		ACD2398E198656B30070AAB4 /* libAsyncTestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD23976198656B20070AAB4 /* libAsyncTestKit.a */; };
 		ACD2399F198657410070AAB4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD23987198656B30070AAB4 /* XCTest.framework */; };
-		ACD239C319866CE90070AAB4 /* AsyncTestKit-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = ACD239C019866CE90070AAB4 /* AsyncTestKit-Prefix.pch */; };
-		ACD239C419866CE90070AAB4 /* AsynTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = ACD239C119866CE90070AAB4 /* AsynTestCase.h */; };
+		ACD239C419866CE90070AAB4 /* AsynTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = ACD239C119866CE90070AAB4 /* AsynTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACD239C519866CE90070AAB4 /* AsynTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD239C219866CE90070AAB4 /* AsynTestCase.m */; };
-		ACD239CB19866D2E0070AAB4 /* AsyncTestKitTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACD239C719866D2E0070AAB4 /* AsyncTestKitTests-Info.plist */; };
 		ACD239CC19866D2E0070AAB4 /* AsynTestKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD239C819866D2E0070AAB4 /* AsynTestKitTests.m */; };
 		ACD239CD19866D2E0070AAB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACD239C919866D2E0070AAB4 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -133,7 +131,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACD239C319866CE90070AAB4 /* AsyncTestKit-Prefix.pch in Headers */,
 				ACD239C419866CE90070AAB4 /* AsynTestCase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +206,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACD239CB19866D2E0070AAB4 /* AsyncTestKitTests-Info.plist in Resources */,
 				ACD239CD19866D2E0070AAB4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +329,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AsyncTestKit/AsyncTestKit-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = AsyncTestKit;
 				PUBLIC_HEADERS_FOLDER_PATH = "include/${PROJECT_NAME}";
@@ -350,6 +347,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AsyncTestKit/AsyncTestKit-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = AsyncTestKit;
 				PUBLIC_HEADERS_FOLDER_PATH = "include/${PROJECT_NAME}";
@@ -366,12 +364,12 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AsynTestKit/AsynTestKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "AsyncTestKit/AsyncTestKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "AsynTestKitTests/AsyncTestKitTests-Info.plist";
+				INFOPLIST_FILE = "AsyncTestKitTests/AsyncTestKitTests-Info.plist";
 				PRODUCT_NAME = AsyncTestKitTests;
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -386,8 +384,8 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AsynTestKit/AsynTestKit-Prefix.pch";
-				INFOPLIST_FILE = "AsynTestKitTests/AsyncTestKitTests-Info.plist";
+				GCC_PREFIX_HEADER = "AsyncTestKit/AsyncTestKit-Prefix.pch";
+				INFOPLIST_FILE = "AsyncTestKitTests/AsyncTestKitTests-Info.plist";
 				PRODUCT_NAME = AsyncTestKitTests;
 				WRAPPER_EXTENSION = xctest;
 			};

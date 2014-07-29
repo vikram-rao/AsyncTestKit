@@ -7,28 +7,45 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "AsynTestCase.h"
 
-@interface AsynTestKitTests : XCTestCase
+@interface AsynTestKitTests : AsynTestCase
 
 @end
 
 @implementation AsynTestKitTests
 
-- (void)setUp
+- (void) testWhenMakingNetworkRequest
 {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    NSURL *url = [NSURL URLWithString:@"http://www.vikramrao.in"];
+    NSURLRequest *networkRequest = [NSURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:networkRequest queue:nil completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        XCTAssertNil(connectionError, @"Error occured - %@", connectionError);
+        [self done]; //Signal that test can terminate
+    }];
+    
+    [self wait:4]; //Wait for 4 seconds. Fails if [self done] is not called on or before 4 seconds.
 }
 
-- (void)tearDown
+- (void)testWhenUsingGCD
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self done];
+    });
+    
+    [self wait:2];
 }
 
-- (void)testExample
+- (void)testWhenUsingNSTimer
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerRun) userInfo:nil repeats:NO];
+    [self wait:2];
+}
+
+- (void)timerRun
+{
+    [self done];
 }
 
 @end
