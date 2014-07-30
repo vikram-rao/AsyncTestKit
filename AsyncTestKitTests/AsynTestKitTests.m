@@ -20,7 +20,7 @@
     NSURL *url = [NSURL URLWithString:@"http://www.vikramrao.in"];
     NSURLRequest *networkRequest = [NSURLRequest requestWithURL:url];
     
-    [NSURLConnection sendAsynchronousRequest:networkRequest queue:nil completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    [NSURLConnection sendAsynchronousRequest:networkRequest queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         XCTAssertNil(connectionError, @"Error occured - %@", connectionError);
         [self done]; //Signal that test can terminate
     }];
@@ -41,6 +41,27 @@
 {
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerRun) userInfo:nil repeats:NO];
     [self wait:2];
+}
+
+- (void)testWhenHavingToRunTwoTimedOperations
+{
+    __block int asynCount = 0;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        asynCount++;
+        [self done];
+    });
+    
+    [self wait:2];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        asynCount++;
+        [self done];
+    });
+    
+    [self wait:2];
+    
+    XCTAssertEqual(asynCount, 2, @"Two async waits did not happen");
 }
 
 - (void)timerRun
