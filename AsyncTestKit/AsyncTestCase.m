@@ -17,19 +17,25 @@
 
 @implementation AsyncTestCase
 
+-(void)resetWait
+{
+    self.completed = NO;    
+}
+
 -(void)wait:(int)timeOut
 {
-    int elapsedTime = 0;
-    
-    while (self.completed == NO && elapsedTime <= 4) {
+    while (self.completed == NO && timeOut > 0) {
+        NSLog(@"Waiting %d seconds", timeOut);
         NSDate* untilDate = [NSDate dateWithTimeIntervalSinceNow:1.0];
         [[NSRunLoop currentRunLoop] runUntilDate:untilDate];
-        elapsedTime++;
+        timeOut--;
     }
     
-    if (elapsedTime == timeOut) {
+    if (timeOut == 0) {
         XCTFail(@"Timeout");
     }
+    
+    [self resetWait];
 }
 
 -(void)done
