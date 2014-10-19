@@ -8,25 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		ACD2397A198656B20070AAB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD23979198656B20070AAB4 /* Foundation.framework */; };
-		ACD23988198656B30070AAB4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD23987198656B30070AAB4 /* XCTest.framework */; };
 		ACD23989198656B30070AAB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD23979198656B20070AAB4 /* Foundation.framework */; };
-		ACD2398E198656B30070AAB4 /* libAsyncTestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD23976198656B20070AAB4 /* libAsyncTestKit.a */; };
-		ACD2399F198657410070AAB4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD23987198656B30070AAB4 /* XCTest.framework */; };
 		ACD239C419866CE90070AAB4 /* AsyncTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = ACD239C119866CE90070AAB4 /* AsyncTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACD239C519866CE90070AAB4 /* AsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD239C219866CE90070AAB4 /* AsyncTestCase.m */; };
 		ACD239CC19866D2E0070AAB4 /* AsynTestKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD239C819866D2E0070AAB4 /* AsynTestKitTests.m */; };
 		ACD239CD19866D2E0070AAB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACD239C919866D2E0070AAB4 /* InfoPlist.strings */; };
+		ACEA001119F3382900E9152A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEA000F19F337F500E9152A /* SenTestingKit.framework */; };
+		ACEA003419F33A8E00E9152A /* libAsyncTestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD23976198656B20070AAB4 /* libAsyncTestKit.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		ACD2398C198656B30070AAB4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ACD2396E198656B20070AAB4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ACD23975198656B20070AAB4;
-			remoteInfo = AsynTestKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		ACD23974198656B20070AAB4 /* CopyFiles */ = {
@@ -44,13 +33,13 @@
 		ACD23976198656B20070AAB4 /* libAsyncTestKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAsyncTestKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD23979198656B20070AAB4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ACD23986198656B30070AAB4 /* AsyncTestKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncTestKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACD23987198656B30070AAB4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		ACD239C019866CE90070AAB4 /* AsyncTestKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AsyncTestKit-Prefix.pch"; sourceTree = "<group>"; };
 		ACD239C119866CE90070AAB4 /* AsyncTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncTestCase.h; sourceTree = "<group>"; };
 		ACD239C219866CE90070AAB4 /* AsyncTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncTestCase.m; sourceTree = "<group>"; };
 		ACD239C719866D2E0070AAB4 /* AsyncTestKitTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AsyncTestKitTests-Info.plist"; sourceTree = "<group>"; };
 		ACD239C819866D2E0070AAB4 /* AsynTestKitTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsynTestKitTests.m; sourceTree = "<group>"; };
 		ACD239CA19866D2E0070AAB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ACEA000F19F337F500E9152A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACD2399F198657410070AAB4 /* XCTest.framework in Frameworks */,
+				ACEA001119F3382900E9152A /* SenTestingKit.framework in Frameworks */,
 				ACD2397A198656B20070AAB4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,8 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACD23988198656B30070AAB4 /* XCTest.framework in Frameworks */,
-				ACD2398E198656B30070AAB4 /* libAsyncTestKit.a in Frameworks */,
+				ACEA003419F33A8E00E9152A /* libAsyncTestKit.a in Frameworks */,
 				ACD23989198656B30070AAB4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,8 +86,8 @@
 		ACD23978198656B20070AAB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ACEA000F19F337F500E9152A /* SenTestingKit.framework */,
 				ACD23979198656B20070AAB4 /* Foundation.framework */,
-				ACD23987198656B30070AAB4 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,7 +155,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				ACD2398D198656B30070AAB4 /* PBXTargetDependency */,
 			);
 			name = AsyncTestKitTests;
 			productName = AsynTestKitTests;
@@ -182,11 +169,6 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Vikram Rao";
-				TargetAttributes = {
-					ACD23985198656B30070AAB4 = {
-						TestTargetID = ACD23975198656B20070AAB4;
-					};
-				};
 			};
 			buildConfigurationList = ACD23971198656B20070AAB4 /* Build configuration list for PBXProject "AsyncTestKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -235,14 +217,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ACD2398D198656B30070AAB4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ACD23975198656B20070AAB4 /* AsyncTestKit */;
-			targetProxy = ACD2398C198656B30070AAB4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ACD239C919866D2E0070AAB4 /* InfoPlist.strings */ = {
@@ -331,6 +305,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AsyncTestKit/AsyncTestKit-Prefix.pch";
@@ -349,6 +324,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AsyncTestKit/AsyncTestKit-Prefix.pch";
