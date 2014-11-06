@@ -25,7 +25,6 @@
 -(void)wait:(int)timeOut
 {
     while (self.completed == NO && timeOut > 0) {
-        NSLog(@"Waiting %d seconds", timeOut);
         NSDate* untilDate = [NSDate dateWithTimeIntervalSinceNow:1.0];
         @try {
             [[NSRunLoop currentRunLoop] runUntilDate:untilDate];
